@@ -1,0 +1,26 @@
+body {
+  padding-bottom: 50px; /* agar konten lebih ke bawah */
+}
+
+.card-img-top {
+  height: 200px;
+  width: 260px;
+  object-fit: cover;
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  display: block;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+#buku {
+  padding-top: 10% !important;
+}

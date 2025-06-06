@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="border-line"></div>
+      <form action="login.html">
+        <h2>Daftar</h2>
+        <div class="input-box">
+          <input type="text" required="required" />
+          <span>Username</span>
+          <i></i>
+        </div>
+        <div class="input-box">
+          <input type="password" required="required" id="password"/>
+          <span>Password</span>
+          <i></i>
+        </div>
+        <div class="input-box">
+          <input type="password" required="required" id="cpassword"/>
+          <span>Konfirmasi Password</span>
+          <i></i>
+        </div>
+        <div class="input-box">
+          <input type="email" required />
+          <span>Email</span>
+          <i></i>
+        </div>
+        <input type="submit" value="Login" class="btn" id="btn"/>
+      </form>
+    </div>
+    <script>
+        const pass = document.getElementById("password").value
+        const cpass = document.getElementById("cpassword").value
+        const btn = document.getElementById("btn")
+
+        btn.addEventListener("submit", function(e) {
+            e.preventDefault();
+            if (pass !== cpass){
+            alert("Password tidak sama");
+            return;
+        }
+        })
+    </script>
+  </body>
+</html>

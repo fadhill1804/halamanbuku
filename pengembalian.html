@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="Icon" href="asset\Blue White Simple Minimalist Library Logo.png" type="image/png">
+  <meta charset="UTF-8">
+  <title>Pengembalian Buku</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .book-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .book-image {
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .btn-kembalikan {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-kembalikan:hover {
+      background-color: #c82333;
+    }
+
+    .book-info h5 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .book-info small {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<script>
+    function kembali(){
+        alert("Buku dikembalikan");
+        window.location.href = "index.html";
+    }
+</script>
+<div class="container py-5">
+  <h2 class="mb-4 text-center">📚 Buku yang Dipinjam</h2>
+
+  <!-- List Buku Pinjaman -->
+  <div class="row">
+    <!-- Buku 1 -->
+    <div class="col-12 book-card bg-white d-flex p-3 align-items-center" data-book-id="bukumengenalhewan">
+      <img src="imgbuku/bukumengenalhewan.webp" alt="Buku" class="book-image me-3 rounded">
+      <div class="book-info flex-grow-1">
+        <h5>Aku Mengenal Hewan</h5>
+        <small>Penulis: Olivia Wilson</small><br>
+        <small>Dipinjam pada: 10 Mei 2025</small>
+      </div>
+      <div>
+        <button class="btn btn-kembalikan" onclick="kembali('bukumengenalhewan')">🔄 Kembalikan</button>
+      </div>
+    </div>
+
+    <!-- Buku 2 -->
+    <div class="col-12 book-card bg-white d-flex p-3 align-items-center" data-book-id="bukupetualangan">
+      <img src="imgbuku/bukupetualangan.webp" alt="Buku" class="book-image me-3 rounded">
+      <div class="book-info flex-grow-1">
+        <h5>Petualangan di Dunia Ajaib</h5>
+        <small>Penulis: James Carter</small><br>
+        <small>Dipinjam pada: 5 Mei 2025</small>
+      </div>
+      <div>
+        <button class="btn btn-kembalikan" onclick="kembali('bukupetualangan')">🔄 Kembalikan</button>
+      </div>
+    </div>
+
+    <!-- Buku 3 -->
+    <div class="col-12 book-card bg-white d-flex p-3 align-items-center" data-book-id="bukuceritaanak">
+      <img src="imgbuku/bukuceritaanak.jpg" alt="Buku" class="book-image me-3 rounded">
+      <div class="book-info flex-grow-1">
+        <h5>Cerita Anak Hebat</h5>
+        <small>Penulis: Rina Mardiana</small><br>
+        <small>Dipinjam pada: 2 Mei 2025</small>
+      </div>
+      <div>
+        <button class="btn btn-kembalikan" onclick="kembali('bukuceritaanak')">🔄 Kembalikan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Kembali -->
+  <div class="text-center mt-4">
+    <a href="index.html" class="btn btn-outline-secondary">← Kembali ke Beranda</a>
+  </div>
+</div>
+
+<script>
+  function kembali(bookId){
+    // Simpan buku yang dikembalikan ke localStorage
+    let returnedBooks = JSON.parse(localStorage.getItem("returnedBooks")) || [];
+    if (!returnedBooks.includes(bookId)) {
+      returnedBooks.push(bookId);
+      localStorage.setItem("returnedBooks", JSON.stringify(returnedBooks));
+    }
+    alert("Buku dikembalikan");
+    window.location.href = "index.html";
+  }
+
+  // Saat halaman dimuat, sembunyikan buku yang sudah dikembalikan
+  window.onload = function() {
+    let returnedBooks = JSON.parse(localStorage.getItem("returnedBooks")) || [];
+    returnedBooks.forEach(function(bookId){
+      const bookElement = document.querySelector(`[data-book-id="${bookId}"]`);
+      if (bookElement) {
+        bookElement.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

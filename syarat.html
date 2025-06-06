@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="Icon" href="" type="">
+    <link rel="stylesheet" href="syarat.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persyaratan Pendaftaran</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #2196F3;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .nav-button {
+      background-color: #1976D2;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .box {
+      border-left: 3px solid #2196F3;
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .box h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    .box ul {
+      padding-left: 20px;
+    }
+
+    .checkbox {
+      margin-top: 20px;
+    }
+
+    .submit-btn {
+      margin: 10px 0px 15px 10px;
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn:disabled {
+      background-color: #90CAF9;
+    }
+
+    .footer {
+      background-color: #e0e0e0;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-container">
+        <img src="asset/Blue White Simple Minimalist Library Logo.png" alt="Logo" class="logo">
+    <h1>A6 Library</h1>
+    </div>
+    <a href="login.html" class="nav-button">Home</a>
+  </div>
+
+  <div class="container">
+    <h1>Persyaratan Pendaftaran</h1>
+    <div class="box">
+      <h2>Persyaratan</h2>
+      <ul>
+        <li>Siswa, mahasiswa, dan umum (WNI/WNA).</li>
+        <li>Mengisi formulir di ruang perpustakaan Jl Loren Ipsum</li>
+        <li>Menunjukkan tanda pengenal:
+          <ul>
+            <li>WNI: KTP atau KK</li>
+            <li>WNA: KITAS</li>
+          </ul>
+        </li>
+        <li>Mengisi formulir pendaftaran dengan lengkap</li>
+        <li>Mencantumkan nomor telepon dan email.</li>
+        <li>Kartu anggota dapat Digunakan di kota Surakarta, kecuali bagi yang berdomisili diluar kota surakarta</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Tata Tertib</h2>
+      <ul>
+        <li>Berpakaian sopan dan rapi.</li>
+        <li>Tidak diperbolehkan membawa makanan dan minuman.</li>
+        <li>Menjaga ketenangan dan kebersihan perpustakaan.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Kartu Anggota</h2>
+      <ul>
+        <li>Berlaku selama 1 tahun sejak tanggal pembuatan.</li>
+        <li>Digunakan untuk mengakses layanan perpustakaan.</li>
+        <li>Kehilangan kartu wajib dilaporkan dan dapat dikenakan biaya penggantian.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Hak dan Kewajiban</h2>
+      <ul>
+        <li>Hak untuk meminjam koleksi sesuai peraturan yang berlaku.</li>
+        <li>Bertanggung jawab atas koleksi yang dipinjam.</li>
+        <li>Wajib menjaga fasilitas perpustakaan.</li>
+      </ul>
+    </div>
+
+    <div class="checkbox">
+      <label><input type="checkbox" id="agree"> Saya telah membaca & menyetujui atas persyaratan dan kondisi yang berlaku.</label>
+      <br><button class="submit-btn" id="submitBtn" disabled >LANJUTKAN PENDAFTARAN</button>
+  </div>
+
+  <div class="footer">
+    © 2025 Copyright: A6 Library 
+  </div>
+
+  <script>
+    const checkbox = document.getElementById("agree");
+    const submit = document.getElementById("submitBtn");
+    checkbox.addEventListener("change", () => {
+      submitBtn.disabled = !checkbox.checked;
+    });
+    submit.addEventListener("click", () => {
+      if (checkbox.checked){
+        window.location.href = "daftar.html"; // Ganti dengan halaman tujuanmu
+      }
+    });
+  </script>
+
+</body>
+</html>

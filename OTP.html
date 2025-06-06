@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="OTP.CSS">
+  <meta charset="UTF-8">
+  <title>Verifikasi OTP</title>
+  </head>
+<body>
+    <div class="box"> <div class="border-line"></div> <form action="#" class="form-otp"> <h2>Verifikasi OTP</h2>
+            <p class="popup">Kode OTP telah dikirim ke email Anda.</p>
+            <div class="input-box"> <input type="text" id="otp" required>
+                <span>Masukkan kode OTP</span>
+                <i></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="newPassword" required>
+                <span>Password Baru</span>
+                <i></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirmPassword" required>
+                <span>Konfirmasi Password Baru</span>
+                <i></i>
+            </div>
+            <button type="button" id="gantiBtn" class="btn">Ganti Password</button> </form>
+    </div>
+
+  <script>
+    document.getElementById("gantiBtn").addEventListener("click", function() {
+      const otp = document.getElementById("otp").value.trim();
+      const newPassword = document.getElementById("newPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (!otp || !newPassword || !confirmPassword) {
+        alert("Semua kolom wajib diisi.");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert("Password dan konfirmasi tidak cocok.");
+        return;
+      }
+
+      // Simulasi verifikasi dan penggantian password
+      alert("Password berhasil diganti!");
+      // Biasanya Anda akan mengirim data ini ke server untuk verifikasi OTP dan penggantian password
+         window.location.href = "login.html"; // Redirect ke halaman login jika berhasil
+    });
+  </script>
+</body>
+</html>
